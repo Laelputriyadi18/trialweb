@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="asset/image/favicon.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Nunito:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <meta name="description" content="Personal Portfolio - Soft Claymorphism Design">
+    <title>Portfolio Lael</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="asset/css/style.css">
+</head>
+
+<body>
+    <!-- Vertical Claymorphism Sidebar Navigation inside Header -->
+    <header>
+        <nav class="sidebar" aria-label="Main Navigation">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active" id="nav-home">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link" id="nav-about">
+                        <i class="fa-solid fa-user"></i>
+                        <span>About</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#project" class="nav-link" id="nav-project">
+                        <i class="fa-solid fa-folder"></i>
+                        <span>Project</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link" id="nav-contact">
+                        <i class="fa-solid fa-share-nodes"></i>
+                        <span>Contact</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content with Placeholder Sections -->
+    <main>
+        <!-- Home Section with Layering (1: Decor, 2: Character, 3: Title) -->
+        <section id="home" class="home-section">
+            <!-- Layer 1: Background Dekorasi (Faint Matrix / Code Stream) (z-index: 1) -->
+            <div class="home-layer home-layer-decor" aria-hidden="true">
+                <div class="code-stream-bg">
+                    <span>8 5 9 1 0 4 4 1 0 9 6 8 7 2 2</span>
+                    <span>4 6 5 2 8 8 3 1 3 6 4 9 0 7 8</span>
+                    <span>1 0 4 8 2 7 3 9 5 1 6 2 8 3 0</span>
+                    <span>7 3 9 1 0 4 8 2 6 5 9 1 3 8 2</span>
+                    <span>5 6 3 4 9 7 5 8 6 9 2 0 4 8 1</span>
+                    <span>2 9 5 1 5 8 8 3 1 4 2 9 8 1 0</span>
+                    <span>8 4 1 6 2 9 3 0 5 7 2 8 4 1 9</span>
+                    <span>3 1 7 4 8 2 0 6 5 9 3 1 7 4 2</span>
+                    <span>9 2 6 5 1 8 4 0 7 3 9 2 6 5 1</span>
+                    <span>6 0 3 9 2 8 1 5 4 7 6 0 3 9 2</span>
+                    <span>4 8 1 9 5 3 0 7 2 6 8 4 1 9 5</span>
+                    <span>7 5 3 0 8 4 1 9 2 6 7 5 3 0 8</span>
+                    <span>1 9 4 8 2 6 3 7 5 0 1 9 4 8 2</span>
+                    <span>6 2 8 3 0 5 9 1 4 7 6 2 8 3 0</span>
+                </div>
+            </div>
+
+            <!-- Layer 2: Karakter Utama (z-index: 2) -->
+            <div class="home-layer home-layer-character">
+                <div class="character-wrapper">
+                    <img src="asset/image/character-center.png" alt="Calandra Alencia Haryani" class="character-img"
+                        id="hero-character">
+                </div>
+            </div>
+
+            <!-- Layer 3: Nama Portfolio (z-index: 3) -->
+            <div class="home-layer home-layer-title">
+                <h1 class="hero-name-pill">
+                    <span class="hero-title-text">Lael Putriyadi</span>
+                </h1>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="about-container">
+                <!-- Sisi Kanan / Floating: Gambar Lanyard Badge -->
+                <div class="about-lanyard">
+                    <img src="asset/image/lanyard.png" alt="Lael Putriyadi ID Card Lanyard" class="lanyard-img">
+                </div>
+
+                <!-- Konten Utama: Editorial About Info & Divider Garis Horizontal Penuh -->
+                <div class="about-content">
+                    <div class="about-intro-header">
+                        <h2 class="about-heading" id="about-heading"><span class="typing-text"></span><span
+                                class="typing-cursor">|</span></h2>
+                        <p class="about-intro">
+                            A Visual Communication Design student passionate about graphic design, branding, and visual
+                            storytelling. I enjoy turning ideas into purposeful and engaging visual experiences.
+                        </p>
+                    </div>
+
+                    <!-- Experience Block -->
+                    <div class="about-block">
+                        <h3 class="block-title">EXPERIENCE</h3>
+                        <div class="editorial-list">
+                            <div class="editorial-item">Graphic Design</div>
+                            <div class="editorial-item">Brand Identity</div>
+                            <div class="editorial-item">Web Design</div>
+                        </div>
+                    </div>
+
+                    <!-- Education Block -->
+                    <div class="about-block">
+                        <h3 class="block-title">EDUCATION</h3>
+                        <div class="editorial-list">
+                            <div class="editorial-item education-item">
+                                <div class="edu-primary">Universitas Pelita Harapan</div>
+                                <div class="edu-secondary">Bachelor of Visual Communication Design</div>
+                                <div class="edu-tertiary">Focus: Graphic Design · 2024—Present</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Block -->
+                    <div class="about-block">
+                        <h3 class="block-title">CONTACT</h3>
+                        <div class="contact-section-content">
+                            <div class="contact-grid">
+                                <a href="https://behance.net" target="_blank" rel="noopener" class="clay-icon-btn"
+                                    aria-label="Behance">
+                                    <i class="fa-brands fa-behance"></i>
+                                </a>
+                                <a href="https://linkedin.com" target="_blank" rel="noopener" class="clay-icon-btn"
+                                    aria-label="LinkedIn">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </a>
+                                <a href="mailto:laelputriyadi18@gmail.com" class="clay-icon-btn" aria-label="Email">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </a>
+                                <a href="#" class="clay-icon-btn" aria-label="Edit / Notes">
+                                    <i class="fa-solid fa-pen"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tools Block -->
+                    <div class="about-block">
+                        <h3 class="block-title">TOOLS</h3>
+                        <div class="tools-row">
+                            <span class="clay-icon-btn" title="Square" aria-label="Square">
+                                <i class="fa-regular fa-square"></i>
+                            </span>
+                            <span class="clay-icon-btn" title="Heart" aria-label="Heart">
+                                <i class="fa-solid fa-heart"></i>
+                            </span>
+                            <span class="clay-icon-btn" title="Favorite" aria-label="Favorite">
+                                <i class="fa-solid fa-heart"></i>
+                            </span>
+                            <span class="clay-icon-btn" title="Back" aria-label="Back">
+                                <i class="fa-solid fa-caret-left"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Section -->
+        <section id="project" class="project-section">
+            <div class="project-container">
+                <!-- Section Title with Editorial Flanking Lines -->
+                <div class="project-title-wrapper">
+                    <h2 class="project-title">PROJECTS</h2>
+                </div>
+
+                <!-- Horizontal Slider Wrapper -->
+                <div class="project-slider-wrapper">
+                    <button type="button" class="slider-btn prev-btn" id="project-prev-btn"
+                        aria-label="Previous Project">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+
+                    <div class="project-slider" id="project-slider" tabindex="0" role="region"
+                        aria-label="Projects showcase slider">
+                        <!-- Project Card 01 -->
+                        <article class="project-card">
+                            <div class="project-card-header">
+                                <span class="project-number">01</span>
+                            </div>
+                            <div class="project-img-box">
+                                <i class="fa-solid fa-mobile-screen-button project-icon" aria-hidden="true"></i>
+                            </div>
+                            <div class="project-card-body">
+                                <h3 class="project-name">Project 1</h3>
+                                <p class="project-category">Mobile Application</p>
+                            </div>
+                        </article>
+
+                        <!-- Project Card 02 -->
+                        <article class="project-card">
+                            <div class="project-card-header">
+                                <span class="project-number">02</span>
+                            </div>
+                            <div class="project-img-box">
+                                <i class="fa-solid fa-tablet-screen-button project-icon" aria-hidden="true"></i>
+                            </div>
+                            <div class="project-card-body">
+                                <h3 class="project-name">Project 2</h3>
+                                <p class="project-category">Tablet UI Design</p>
+                            </div>
+                        </article>
+
+                        <!-- Project Card 03 -->
+                        <article class="project-card">
+                            <div class="project-card-header">
+                                <span class="project-number">03</span>
+                            </div>
+                            <div class="project-img-box">
+                                <i class="fa-solid fa-laptop project-icon" aria-hidden="true"></i>
+                            </div>
+                            <div class="project-card-body">
+                                <h3 class="project-name">Project 3</h3>
+                                <p class="project-category">Web Platform & SaaS</p>
+                            </div>
+                        </article>
+
+                        <!-- Project Card 04 -->
+                        <article class="project-card">
+                            <div class="project-card-header">
+                                <span class="project-number">04</span>
+                            </div>
+                            <div class="project-img-box">
+                                <i class="fa-solid fa-desktop project-icon" aria-hidden="true"></i>
+                            </div>
+                            <div class="project-card-body">
+                                <h3 class="project-name">Project 4</h3>
+                                <p class="project-category">Desktop Software</p>
+                            </div>
+                        </article>
+
+                        <!-- Project Card 05 -->
+                        <article class="project-card">
+                            <div class="project-card-header">
+                                <span class="project-number">05</span>
+                            </div>
+                            <div class="project-img-box">
+                                <i class="fa-solid fa-layer-group project-icon" aria-hidden="true"></i>
+                            </div>
+                            <div class="project-card-body">
+                                <h3 class="project-name">Project 5</h3>
+                                <p class="project-category">Brand Identity & System</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <button type="button" class="slider-btn next-btn" id="project-next-btn" aria-label="Next Project">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section with Claymorphism Interactive Envelope CTA -->
+        <section id="contact" class="contact-section">
+            <!-- Interactive Envelope CTA -->
+            <div class="envelope-cta-wrapper">
+                <div class="envelope-container" tabindex="0" role="region" aria-label="Interactive Contact Envelope">
+                    <!-- Bagian Belakang Amplop -->
+                    <div class="envelope-back" aria-hidden="true"></div>
+
+                    <!-- Surat di Dalam Amplop -->
+                    <article class="envelope-letter">
+                        <h3 class="letter-title">Let's Work Together!</h3>
+                        <p class="letter-text">
+                            Have a project in mind, need a developer, or just want to discuss some cool ideas? I'm
+                            always open to new opportunities.
+                        </p>
+                        <a href="mailto:laelputriyadi18@gmail.com?subject=Let's%20Work%20Together!" class="envelope-btn"
+                            id="contact-email-btn">
+                            Send Me an Email
+                        </a>
+                    </article>
+
+                    <!-- Pocket / Bagian Depan Amplop -->
+                    <div class="envelope-pocket-wrapper" aria-hidden="true">
+                        <div class="envelope-pocket"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Project Preview Modal Popup -->
+    <div id="project-modal" class="project-modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true"
+        aria-labelledby="modal-title">
+        <div class="project-modal-dialog">
+            <div class="modal-dialog-header">
+                <span class="modal-number" id="modal-number">01</span>
+                <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="modal-img-wrapper" id="modal-img-wrapper">
+                <!-- Large project graphic or image loaded dynamically -->
+            </div>
+            <div class="modal-info">
+                <h3 class="modal-title" id="modal-title">Project 1</h3>
+                <p class="modal-category" id="modal-category">Mobile Application</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6285156897093" target="_blank" rel="noopener noreferrer" class="floating-wa-btn"
+        id="floating-wa-btn" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <footer>
+        <p>&copy; 2026 Portfolio. Crafted with Vibe Coding.</p>
+    </footer>
+
+    <!-- Custom Script -->
+    <script src="asset/js/script.js"></script>
+</body>
+
+</html>

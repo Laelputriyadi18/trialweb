@@ -1,0 +1,2025 @@
+/* ==========================================================================
+   Claymorphism Portfolio Sidebar & Layout Styles
+   ========================================================================== */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+/* CSS Variables */
+:root {
+    --bg-page: #ffffff;
+    --sidebar-mint: #c9ded9;
+    --menu-active-cream: #f5f1e7;
+    --text-muted-green: #415952;
+    --text-active-green: #30443e;
+    --text-hover-green: #384e48;
+
+    /* Claymorphism Shadow Tokens */
+    --sidebar-outer-shadow: 16px 20px 40px rgba(162, 191, 183, 0.4),
+        -10px -10px 28px rgba(255, 255, 255, 0.95);
+    --sidebar-inner-shadow: inset 2px 2px 5px rgba(255, 255, 255, 0.75),
+        inset -3px -3px 8px rgba(154, 183, 175, 0.35);
+
+    --clay-btn-outer-shadow: 0 6px 14px rgba(65, 89, 82, 0.08),
+        0 2px 4px rgba(65, 89, 82, 0.05);
+    --clay-btn-inner-shadow: inset 0 2px 3px rgba(255, 255, 255, 0.95),
+        inset 0 -2px 3px rgba(190, 180, 163, 0.3);
+
+    --clay-btn-hover-shadow: 0 4px 10px rgba(65, 89, 82, 0.06),
+        inset 0 1px 2px rgba(255, 255, 255, 0.8),
+        inset 0 -1px 2px rgba(165, 192, 184, 0.25);
+
+    --sidebar-width: 175px;
+    --sidebar-radius: 36px;
+    --menu-radius: 26px;
+    --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+body {
+    background-color: var(--bg-page);
+    font-family: var(--font-family);
+    color: var(--text-muted-green);
+    min-height: 100vh;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+section {
+    scroll-margin-top: 24px;
+}
+
+/* ==========================================================================
+   Header & Sidebar Layout
+   ========================================================================== */
+
+header {
+    position: fixed;
+    top: 20px;
+    left: 24px;
+    bottom: 20px;
+    z-index: 1000;
+}
+
+/* Claymorphism Sidebar Container */
+.sidebar {
+    width: var(--sidebar-width);
+    height: 100%;
+    background-color: var(--sidebar-mint);
+    border-radius: var(--sidebar-radius);
+    padding: 16px 14px;
+    box-shadow: var(--sidebar-outer-shadow), var(--sidebar-inner-shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    box-sizing: border-box;
+    position: relative;
+    user-select: none;
+}
+
+/* Navigation List */
+.sidebar-nav {
+    width: 100%;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    width: 100%;
+}
+
+/* Navigation Link */
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 20px;
+    color: var(--text-muted-green);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: -0.01em;
+    border-radius: var(--menu-radius);
+    transition: var(--transition-smooth);
+    position: relative;
+}
+
+.nav-link i {
+    font-size: 1.05rem;
+    width: 20px;
+    text-align: center;
+    color: var(--text-muted-green);
+    transition: var(--transition-smooth);
+}
+
+.nav-link span {
+    font-weight: 600;
+}
+
+/* Active State - Claymorphism Pill Button */
+.nav-link.active {
+    background-color: var(--menu-active-cream);
+    color: var(--text-active-green);
+    box-shadow: var(--clay-btn-outer-shadow), var(--clay-btn-inner-shadow);
+    transform: translateY(-1px);
+}
+
+.nav-link.active i {
+    color: var(--text-active-green);
+}
+
+/* Hover State for Inactive Items */
+.nav-link:not(.active):hover {
+    color: var(--text-hover-green);
+    background-color: rgba(245, 241, 231, 0.5);
+    box-shadow: var(--clay-btn-hover-shadow);
+    transform: translateY(-1px);
+}
+
+.nav-link:not(.active):hover i {
+    color: var(--text-hover-green);
+}
+
+/* Focus styles for accessibility */
+.nav-link:focus-visible {
+    outline: 2px solid var(--text-muted-green);
+    outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Main Content & Home Section
+   ========================================================================== */
+
+main {
+    margin-left: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* ==========================================================================
+   Home Section (Layering: 1-Decor, 2-Character, 3-Title)
+   ========================================================================== */
+
+.home-section {
+    position: relative;
+    height: 100vh;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+    box-sizing: border-box;
+    background-color: var(--bg-page);
+}
+
+/* Layer Base */
+.home-layer {
+    width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   Layer 1: Background Dekorasi (Faint Matrix / Code Stream) (z-index: 1)
+   -------------------------------------------------------------------------- */
+.home-layer-decor {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.code-stream-bg {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 2%;
+    opacity: 0.11;
+    pointer-events: none;
+    user-select: none;
+    overflow: hidden;
+    font-family: 'SF Mono', Monaco, Inconsolata, 'Fira Code', 'Courier New', monospace;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--text-muted-green);
+    letter-spacing: 0.38em;
+    line-height: 2.2;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+
+/* --------------------------------------------------------------------------
+   Layer 2: Karakter Utama (z-index: 2)
+   -------------------------------------------------------------------------- */
+.home-layer-character {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.character-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    max-width: 920px;
+    height: 96vh;
+    max-height: 980px;
+    margin: 0 auto;
+}
+
+.character-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom center;
+    display: block;
+    user-select: none;
+    -webkit-user-drag: none;
+    filter: drop-shadow(0 16px 36px rgba(65, 89, 82, 0.1));
+    transition: filter 0.3s ease;
+}
+
+/* --------------------------------------------------------------------------
+   Layer 3: Nama Portfolio (z-index: 3)
+   -------------------------------------------------------------------------- */
+.home-layer-title {
+    position: absolute;
+    bottom: 14%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    max-width: calc(100% - 40px);
+    pointer-events: auto;
+    animation: homeTitleFloat 5s ease-in-out infinite;
+    will-change: transform;
+}
+
+/* Animasi Floating Halus untuk Pill Container (Tegak Lurus di Tengah) */
+@keyframes homeTitleFloat {
+
+    0%,
+    100% {
+        transform: translate(-50%, 0);
+    }
+
+    50% {
+        transform: translate(-50%, -8px);
+    }
+}
+
+.hero-name-pill {
+    background-color: var(--sidebar-mint);
+    white-space: nowrap;
+    padding: 18px 56px;
+    border-radius: 60px;
+    border: 1.5px solid rgba(255, 255, 255, 0.75);
+    box-shadow:
+        0 16px 38px rgba(135, 172, 162, 0.42),
+        0 4px 10px rgba(0, 0, 0, 0.04),
+        inset 0 2px 4px rgba(255, 255, 255, 0.9),
+        inset 0 -2px 4px rgba(145, 175, 168, 0.25);
+    text-align: center;
+    margin: 0;
+    user-select: none;
+    transition: var(--transition-smooth);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Animasi Khusus pada Tulisan Judul (Text Shimmer & Soft Breathing Glow) */
+.hero-title-text {
+    display: inline-block;
+    font-size: clamp(1.85rem, 3.5vw, 3.2rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    background: linear-gradient(90deg,
+            #223932 0%,
+            #2d483f 25%,
+            #588374 50%,
+            #2d483f 75%,
+            #223932 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textShine 4.5s linear infinite, textBreathe 4.5s ease-in-out infinite;
+    will-change: transform, background-position;
+}
+
+@keyframes textShine {
+    0% {
+        background-position: 200% center;
+    }
+
+    100% {
+        background-position: -200% center;
+    }
+}
+
+@keyframes textBreathe {
+
+    0%,
+    100% {
+        transform: scale(1);
+        filter: drop-shadow(0 1px 2px rgba(34, 57, 50, 0.1));
+    }
+
+    50% {
+        transform: scale(1.02);
+        filter: drop-shadow(0 4px 10px rgba(34, 57, 50, 0.22));
+    }
+}
+
+.hero-name-pill:hover {
+    transform: scale(1.02);
+    box-shadow:
+        0 20px 44px rgba(135, 172, 162, 0.5),
+        0 6px 14px rgba(0, 0, 0, 0.04),
+        inset 0 2px 4px rgba(255, 255, 255, 0.95),
+        inset 0 -2px 4px rgba(145, 175, 168, 0.2);
+}
+
+.hero-name-pill:hover .hero-title-text {
+    animation-duration: 2s, 2s;
+}
+
+/* ==========================================================================
+   About Section (Minimal Editorial & Claymorphism)
+   ========================================================================== */
+
+.about-section {
+    min-height: 100vh;
+    margin-left: calc(var(--sidebar-width) + 40px);
+    padding: 70px 60px 100px 45px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: var(--bg-page);
+    box-sizing: border-box;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.about-container {
+    position: relative;
+    max-width: 1040px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Floating & Draggable Lanyard on Right */
+.about-lanyard {
+    position: absolute;
+    top: -65px;
+    right: 20px;
+    width: 370px;
+    max-width: 40%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    transform-origin: top center;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: none;
+    will-change: transform;
+}
+
+.about-lanyard.is-dragging {
+    cursor: grabbing;
+    z-index: 20;
+}
+
+.lanyard-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 16px 32px rgba(65, 89, 82, 0.16));
+    user-select: none;
+    -webkit-user-drag: none;
+    pointer-events: none;
+}
+
+/* Editorial About Info & Lines across full width */
+.about-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-intro-header {
+    margin-bottom: 24px;
+    max-width: 680px;
+}
+
+.about-heading {
+    font-size: clamp(2.1rem, 3.2vw, 2.85rem);
+    font-weight: 800;
+    color: var(--text-active-green);
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    margin-bottom: 12px;
+    min-height: 1.25em;
+}
+
+.typing-cursor {
+    display: inline-block;
+    font-weight: 300;
+    color: var(--text-active-green);
+    margin-left: 2px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.typing-cursor.blink {
+    opacity: 1;
+    animation: blink-cursor 1s step-start infinite;
+}
+
+@keyframes blink-cursor {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.about-intro {
+    font-size: 1.05rem;
+    color: rgba(65, 89, 82, 0.85);
+    line-height: 1.6;
+}
+
+/* Area Informasi Editorial Blocks */
+.about-block {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+.block-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-active-green);
+    margin-bottom: 12px;
+}
+
+/* Divider Lines */
+.editorial-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid rgba(165, 195, 188, 0.75);
+    width: 100%;
+}
+
+.editorial-item {
+    padding: 14px 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-active-green);
+    border-bottom: 1px solid rgba(165, 195, 188, 0.75);
+    width: 100%;
+    transition: var(--transition-smooth);
+}
+
+/* Education Visual Hierarchy */
+.editorial-item.education-item {
+    padding: 14px 0 16px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.edu-primary {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-active-green);
+    letter-spacing: -0.01em;
+}
+
+.edu-secondary {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-muted-green);
+}
+
+.edu-tertiary {
+    font-size: 0.86rem;
+    font-weight: 500;
+    color: rgba(65, 89, 82, 0.75);
+}
+
+/* Contact Block with Full Divider Lines and 2x2 Grid */
+.contact-section-content {
+    border-top: 1px solid rgba(165, 195, 188, 0.75);
+    border-bottom: 1px solid rgba(165, 195, 188, 0.75);
+    padding: 14px 0;
+    width: 100%;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 44px);
+    gap: 10px;
+}
+
+/* Tools Block with Single Row of 4 Icons */
+.tools-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+/* Icon Buttons for CONTACT & TOOLS - Aligned with Sidebar Claymorphism */
+.clay-icon-btn {
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background-color: #8dafa6;
+    color: #ffffff;
+    font-size: 1.15rem;
+    text-decoration: none;
+    box-shadow:
+        0 6px 14px rgba(110, 145, 137, 0.28),
+        inset 0 1.5px 2px rgba(255, 255, 255, 0.6),
+        inset 0 -1.5px 2px rgba(70, 95, 89, 0.25);
+    transition: var(--transition-smooth);
+    border: none;
+    cursor: pointer;
+}
+
+.clay-icon-btn:hover {
+    transform: translateY(-2px);
+    background-color: #7b9f96;
+    box-shadow:
+        0 8px 18px rgba(110, 145, 137, 0.38),
+        inset 0 1.5px 2px rgba(255, 255, 255, 0.7);
+}
+
+/* ==========================================================================
+   Project Section (Claymorphism Horizontal Slider)
+   ========================================================================== */
+
+.project-section {
+    min-height: 100vh;
+    margin-left: calc(var(--sidebar-width) + 40px);
+    padding: 80px 48px 100px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--bg-page);
+    box-sizing: border-box;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.project-container {
+    max-width: 1060px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Section Title with Editorial Flanking Lines */
+.project-title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 52px;
+    width: 100%;
+}
+
+.project-title-wrapper::before,
+.project-title-wrapper::after {
+    content: '';
+    flex: 1;
+    max-width: 180px;
+    height: 1.5px;
+    background-color: #557269;
+    opacity: 0.65;
+}
+
+.project-title {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: var(--text-active-green);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+}
+
+/* Slider Outer Wrapper */
+.project-slider-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    position: relative;
+}
+
+/* Navigation Buttons (< and >) */
+.slider-btn {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: #dbeae6;
+    border: 1.5px solid rgba(255, 255, 255, 0.75);
+    color: #3b564e;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow:
+        0 6px 16px rgba(145, 178, 170, 0.35),
+        inset 1.5px 1.5px 3px rgba(255, 255, 255, 0.9),
+        inset -1.5px -1.5px 3px rgba(140, 170, 162, 0.25);
+    transition: var(--transition-smooth);
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    z-index: 5;
+}
+
+.slider-btn:hover {
+    transform: scale(1.08);
+    background-color: #d0e4df;
+    color: var(--text-active-green);
+    box-shadow:
+        0 8px 20px rgba(145, 178, 170, 0.45),
+        inset 1.5px 1.5px 3px rgba(255, 255, 255, 0.95),
+        inset -1.5px -1.5px 3px rgba(140, 170, 162, 0.2);
+}
+
+.slider-btn:active {
+    transform: scale(0.95);
+    box-shadow:
+        0 2px 6px rgba(145, 178, 170, 0.3),
+        inset 2px 2px 4px rgba(130, 160, 152, 0.35),
+        inset -1px -1px 2px rgba(255, 255, 255, 0.8);
+}
+
+/* Horizontal Slider Track */
+.project-slider {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE/Edge */
+    padding: 20px 8px 30px 8px;
+    /* Room for card hover lift and clay drop shadows */
+    outline: none;
+}
+
+.project-slider::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
+}
+
+/* Claymorphism Project Card */
+.project-card {
+    flex: 0 0 calc((100% - 2 * 24px) / 3);
+    min-width: calc((100% - 2 * 24px) / 3);
+    max-width: calc((100% - 2 * 24px) / 3);
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+    background: linear-gradient(150deg, #ddede9 0%, #d2e4df 100%);
+    border-radius: 28px;
+    padding: 24px 22px 26px 22px;
+    border: 1.5px solid rgba(255, 255, 255, 0.75);
+    box-shadow:
+        0 16px 36px rgba(158, 189, 181, 0.42),
+        0 4px 10px rgba(0, 0, 0, 0.03),
+        inset 2px 2px 5px rgba(255, 255, 255, 0.9),
+        inset -2px -2px 6px rgba(142, 175, 167, 0.3);
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    user-select: none;
+    cursor: pointer;
+}
+
+/* Card Hover Effect: lifts slightly */
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow:
+        0 24px 48px rgba(142, 178, 169, 0.52),
+        0 6px 16px rgba(0, 0, 0, 0.04),
+        -8px -8px 24px rgba(255, 255, 255, 0.95),
+        inset 2px 2px 5px rgba(255, 255, 255, 0.95),
+        inset -2px -2px 6px rgba(142, 175, 167, 0.25);
+}
+
+.project-card:active {
+    transform: translateY(-2px);
+}
+
+/* Large Number at Top-Left */
+.project-card-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.project-number {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #8faea6;
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+/* Inset / Recessed Project Image Box */
+.project-img-box {
+    width: 100%;
+    aspect-ratio: 16 / 10.5;
+    background: #edf5f2;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+        inset 3px 3px 6px rgba(145, 175, 167, 0.38),
+        inset -2px -2px 6px rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+    transition: var(--transition-smooth);
+    cursor: pointer;
+}
+
+.project-img-box:hover {
+    border-color: rgba(255, 255, 255, 0.95);
+    box-shadow:
+        inset 4px 4px 8px rgba(145, 175, 167, 0.45),
+        inset -2px -2px 6px rgba(255, 255, 255, 0.98);
+}
+
+.project-icon {
+    font-size: 2.6rem;
+    color: #344c45;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.3s ease;
+}
+
+.project-card:hover .project-icon {
+    transform: scale(1.12);
+    color: var(--text-active-green);
+}
+
+/* Card Body & Information */
+.project-card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: auto;
+}
+
+.project-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-active-green);
+    letter-spacing: -0.01em;
+    margin-bottom: 3px;
+}
+
+.project-category {
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: #5c7e75;
+    letter-spacing: 0.01em;
+}
+
+/* ==========================================================================
+   Project Detail Modal Popup (Claymorphism & Smooth Backdrop)
+   ========================================================================== */
+
+.project-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background-color: rgba(14, 28, 24, 0.65);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        visibility 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-modal-backdrop.is-active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.project-modal-dialog {
+    background: linear-gradient(150deg, #ddede9 0%, #d2e4df 100%);
+    border-radius: 28px;
+    border: 1.5px solid rgba(255, 255, 255, 0.85);
+    box-shadow:
+        0 24px 60px rgba(0, 0, 0, 0.35),
+        inset 2px 2px 5px rgba(255, 255, 255, 0.95),
+        inset -2px -2px 6px rgba(142, 175, 167, 0.3);
+    max-width: 580px;
+    width: 100%;
+    position: relative;
+    padding: 28px 28px 28px 28px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    transform: scale(0.9) translateY(14px);
+    opacity: 0;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+        opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-modal-backdrop.is-active .project-modal-dialog {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+
+.modal-dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.modal-number {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #8faea6;
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+.modal-close-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #dbeae6;
+    border: 1.5px solid rgba(255, 255, 255, 0.8);
+    color: #344d45;
+    font-size: 1.15rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow:
+        0 6px 14px rgba(145, 178, 170, 0.35),
+        inset 1.5px 1.5px 3px rgba(255, 255, 255, 0.9),
+        inset -1.5px -1.5px 3px rgba(140, 170, 162, 0.25);
+    transition: var(--transition-smooth);
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.modal-close-btn:hover {
+    transform: scale(1.1) rotate(90deg);
+    background-color: #d0e4df;
+    color: var(--text-active-green);
+    box-shadow:
+        0 8px 18px rgba(145, 178, 170, 0.45),
+        inset 1.5px 1.5px 3px rgba(255, 255, 255, 0.95);
+}
+
+.modal-close-btn:active {
+    transform: scale(0.95) rotate(90deg);
+}
+
+.modal-img-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    min-height: 230px;
+    max-height: 340px;
+    background: #edf5f2;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+        inset 4px 4px 9px rgba(145, 175, 167, 0.42),
+        inset -3px -3px 8px rgba(255, 255, 255, 0.95);
+    border: 1.5px solid rgba(255, 255, 255, 0.65);
+    margin: 14px 0 20px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.modal-img-wrapper .modal-large-icon {
+    font-size: 5.5rem;
+    color: #314a42;
+    filter: drop-shadow(0 6px 14px rgba(49, 74, 66, 0.15));
+    transition: transform 0.3s ease;
+}
+
+.modal-img-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 16px;
+}
+
+.modal-info {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-title {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--text-active-green);
+    letter-spacing: -0.015em;
+    margin-bottom: 3px;
+}
+
+.modal-category {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #5c7e75;
+}
+
+/* ==========================================================================
+   Contact Section (Interactive Claymorphism Envelope CTA)
+   ========================================================================== */
+
+.contact-section {
+    min-height: 100vh;
+    margin-left: calc(var(--sidebar-width) + 40px);
+    padding: 90px 48px 120px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-page);
+    box-sizing: border-box;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.contact-container {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* Section Title with Editorial Flanking Lines */
+.contact-title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 60px;
+    width: 100%;
+}
+
+.contact-title-wrapper::before,
+.contact-title-wrapper::after {
+    content: '';
+    flex: 1;
+    max-width: 180px;
+    height: 1.5px;
+    background-color: #557269;
+    opacity: 0.65;
+}
+
+.contact-title {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: var(--text-active-green);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+}
+
+/* Envelope Outer Wrapper (Provides room for the letter to slide up) */
+.envelope-cta-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 70px;
+    padding-bottom: 24px;
+}
+
+/* The Envelope Container */
+.envelope-container {
+    position: relative;
+    width: 580px;
+    max-width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Layer 1: Bagian Belakang Amplop (Envelope Back) */
+.envelope-back {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 270px;
+    background: linear-gradient(155deg, #dbeae5 0%, #cee1db 100%);
+    border-radius: 32px;
+    border: 1.5px solid rgba(255, 255, 255, 0.85);
+    box-shadow:
+        0 20px 48px rgba(150, 185, 175, 0.42),
+        0 4px 12px rgba(0, 0, 0, 0.03),
+        inset 2px 2px 5px rgba(255, 255, 255, 0.9),
+        inset -2px -2px 6px rgba(135, 170, 162, 0.28);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Layer 2: Surat di Dalam Amplop (Letter) */
+.envelope-letter {
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%) translateY(0);
+    width: 490px;
+    max-width: 90%;
+    background: #ffffff;
+    border-radius: 20px;
+    border: 1px solid rgba(200, 222, 216, 0.45);
+    box-shadow:
+        0 14px 34px rgba(45, 75, 68, 0.12),
+        0 3px 8px rgba(0, 0, 0, 0.04),
+        inset 0 2px 3px rgba(255, 255, 255, 0.95);
+    padding: 34px 32px 28px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+    transition: transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+    will-change: transform;
+}
+
+.letter-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #274039;
+    letter-spacing: -0.015em;
+    margin-bottom: 12px;
+    line-height: 1.2;
+}
+
+.letter-text {
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: #557269;
+    line-height: 1.55;
+    max-width: 410px;
+    margin: 0 auto 20px auto;
+}
+
+/* Button inside Letter ("Send Me an Email") */
+.envelope-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 26px;
+    border-radius: 50px;
+    background-color: #c7ded7;
+    color: #264038;
+    font-weight: 700;
+    font-size: 0.92rem;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    box-shadow:
+        0 6px 16px rgba(120, 160, 150, 0.28),
+        inset 0 1.5px 2px rgba(255, 255, 255, 0.9),
+        inset 0 -1.5px 2px rgba(130, 165, 155, 0.2);
+    transition: var(--transition-smooth);
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.envelope-btn:hover {
+    background-color: #b8d8cf;
+    color: #1e362f;
+    transform: scale(1.05);
+    box-shadow:
+        0 8px 20px rgba(110, 155, 145, 0.38),
+        inset 0 1.5px 2px rgba(255, 255, 255, 0.95);
+}
+
+.envelope-btn:active {
+    transform: scale(0.97);
+}
+
+/* Layer 3: Pocket / Bagian Depan Amplop (Front Pocket with V-Dip) */
+.envelope-pocket-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 140px;
+    border-radius: 0 0 32px 32px;
+    overflow: hidden;
+    filter: drop-shadow(0 -4px 14px rgba(140, 175, 165, 0.22));
+    z-index: 3;
+    pointer-events: none;
+}
+
+.envelope-pocket {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(165deg, #dcebe6 0%, #cde2dc 100%);
+    clip-path: polygon(0 0, 50% 24px, 100% 0, 100% 100%, 0 100%);
+    box-shadow:
+        inset 0 2px 4px rgba(255, 255, 255, 0.9),
+        inset 0 -3px 6px rgba(135, 170, 162, 0.3);
+}
+
+/* Glowing Top Edge Highlight along the V-dip */
+.envelope-pocket::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(0 0, 50% 24px, 100% 0, 100% 1.5px, 50% 25.5px, 0 1.5px);
+    background: rgba(255, 255, 255, 0.9);
+    pointer-events: none;
+}
+
+/* Interactive Animation: Hover, Focus-within, or Toggled state lifts the letter */
+.envelope-container:hover .envelope-letter,
+.envelope-container.is-open .envelope-letter,
+.envelope-container:focus-within .envelope-letter {
+    transform: translateX(-50%) translateY(-95px);
+    box-shadow:
+        0 26px 52px rgba(45, 75, 68, 0.18),
+        0 6px 14px rgba(0, 0, 0, 0.05);
+}
+
+/* Footer placeholder */
+footer {
+    margin-left: calc(var(--sidebar-width) + 40px);
+    padding: 24px 40px 32px 0;
+    font-size: 0.85rem;
+    color: rgba(65, 89, 82, 0.6);
+}
+
+/* ==========================================================================
+   Floating WhatsApp Button (Claymorphism Style)
+   ========================================================================== */
+
+.floating-wa-btn {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #2fe075, #20b85a);
+    color: #ffffff;
+    font-size: 1.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    z-index: 999;
+    border: 2px solid rgba(255, 255, 255, 0.75);
+    box-shadow:
+        0 12px 28px rgba(32, 184, 90, 0.38),
+        0 4px 10px rgba(0, 0, 0, 0.05),
+        inset 0 2.5px 3.5px rgba(255, 255, 255, 0.8),
+        inset 0 -2.5px 4px rgba(18, 120, 56, 0.28);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, background 0.3s ease;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.floating-wa-btn i {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.floating-wa-btn:hover {
+    transform: translateY(-5px) scale(1.06);
+    background: linear-gradient(145deg, #38e87d, #23c764);
+    box-shadow:
+        0 18px 36px rgba(32, 184, 90, 0.48),
+        0 6px 14px rgba(0, 0, 0, 0.08),
+        inset 0 2.5px 3.5px rgba(255, 255, 255, 0.9),
+        inset 0 -2.5px 4px rgba(18, 120, 56, 0.22);
+}
+
+.floating-wa-btn:hover i {
+    transform: scale(1.1);
+}
+
+.floating-wa-btn:active {
+    transform: translateY(-1px) scale(0.98);
+    box-shadow:
+        0 6px 16px rgba(32, 184, 90, 0.35),
+        inset 0 1.5px 2px rgba(255, 255, 255, 0.7),
+        inset 0 -1.5px 2px rgba(18, 120, 56, 0.35);
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   Breakpoints:
+   - Desktop: Default (> 1024px)
+   - Desktop Intermediate (1025px - 1280px)
+   - Tablet:  <= 1024px (and > 768px)
+   - Mobile:  <= 768px
+   - Small Screen Polish: <= 480px
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Desktop Intermediate Screens (1025px to 1280px)
+   - Lanyard tetap tampil & interaktif
+   - Header teks di-constrain agar tidak bertubrukan dengan lanyard
+   - Slider tetap menampilkan 3 card
+   -------------------------------------------------------------------------- */
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .about-section {
+        padding: 70px 40px 100px 36px;
+    }
+
+    .about-lanyard {
+        width: 310px;
+        max-width: 36%;
+        right: 15px;
+        top: -45px;
+    }
+
+    .about-intro-header {
+        max-width: calc(100% - 320px);
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Tablet & Intermediate Screens (max-width: 1024px)
+   - Ukuran card dan typography diperkecil
+   - Lanyard dekoratif disembunyikan agar ruang leluasa & konten mudah dibaca
+   - Character proporsional & hero title disesuaikan
+   - Envelope Contact disesuaikan ukurannya
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+
+    /* Sembunyikan lanyard dekoratif agar konten editorial mendapat lebar penuh dan mudah dibaca */
+    .about-lanyard {
+        display: none !important;
+    }
+
+    .about-intro-header {
+        max-width: 100%;
+    }
+
+    .about-container {
+        max-width: 100%;
+    }
+
+    /* Karakter & Hero Title Tablet */
+    .character-wrapper {
+        height: 78vh;
+        max-height: 720px;
+        max-width: 700px;
+    }
+
+    .hero-name-pill {
+        padding: 13px 36px;
+        border-radius: 50px;
+    }
+
+    .hero-title-text {
+        font-size: clamp(1.4rem, 3.2vw, 2.2rem);
+    }
+
+    /* Typography Scaled Down */
+    .about-heading {
+        font-size: clamp(1.7rem, 2.8vw, 2.3rem);
+    }
+
+    .about-intro {
+        font-size: 0.98rem;
+    }
+
+    .block-title {
+        font-size: 0.78rem;
+    }
+
+    .editorial-item {
+        font-size: 0.95rem;
+        padding: 12px 0;
+    }
+
+    .edu-primary {
+        font-size: 1rem;
+    }
+
+    .edu-secondary {
+        font-size: 0.9rem;
+    }
+
+    .edu-tertiary {
+        font-size: 0.82rem;
+    }
+
+    .project-title,
+    .contact-title {
+        font-size: 1.55rem;
+        letter-spacing: 0.12em;
+    }
+
+    .project-number {
+        font-size: 1.45rem;
+    }
+
+    .project-name {
+        font-size: 1.05rem;
+    }
+
+    .project-category {
+        font-size: 0.82rem;
+    }
+
+    .project-icon {
+        font-size: 2.3rem;
+    }
+
+    /* Contact Envelope Scaled Down for Tablet */
+    .envelope-container {
+        width: min(520px, 100%);
+        max-width: 100%;
+        height: 280px;
+    }
+
+    .envelope-back {
+        height: 250px;
+        border-radius: 28px;
+    }
+
+    .envelope-letter {
+        width: 440px;
+        max-width: 90%;
+        bottom: 60px;
+        padding: 26px 24px 22px 24px;
+    }
+
+    .letter-title {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .letter-text {
+        font-size: 0.88rem;
+        margin-bottom: 16px;
+    }
+
+    .envelope-pocket-wrapper {
+        height: 130px;
+        border-radius: 0 0 28px 28px;
+    }
+
+    .envelope-container:hover .envelope-letter,
+    .envelope-container.is-open .envelope-letter,
+    .envelope-container:focus-within .envelope-letter {
+        transform: translateX(-50%) translateY(-80px);
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Tablet-Only Layout (769px to 1024px):
+   - Sidebar vertikal tetap di kiri (versi compact)
+   - Project menampilkan ~2 cards
+   - Floating WhatsApp proporsional di kanan bawah
+   -------------------------------------------------------------------------- */
+@media (min-width: 769px) and (max-width: 1024px) {
+    header {
+        top: 16px;
+        left: 16px;
+        bottom: 16px;
+    }
+
+    .sidebar {
+        width: 148px;
+        padding: 14px 10px;
+        border-radius: 28px;
+    }
+
+    .nav-link {
+        padding: 11px 12px;
+        font-size: 0.88rem;
+        gap: 10px;
+    }
+
+    .nav-link i {
+        font-size: 0.95rem;
+        width: 18px;
+    }
+
+    main {
+        margin-left: 0;
+    }
+
+    .about-section,
+    .project-section,
+    .contact-section {
+        margin-left: calc(148px + 28px);
+        padding: 70px 32px 90px 32px;
+    }
+
+    footer {
+        margin-left: calc(148px + 28px);
+        padding: 20px 32px 30px 32px;
+    }
+
+    .project-slider {
+        gap: 20px;
+    }
+
+    .project-card {
+        flex: 0 0 calc((100% - 20px) / 2);
+        min-width: calc((100% - 20px) / 2);
+        max-width: calc((100% - 20px) / 2);
+        padding: 22px 18px 24px 18px;
+        border-radius: 24px;
+    }
+
+    .floating-wa-btn {
+        bottom: 28px;
+        right: 28px;
+        width: 54px;
+        height: 54px;
+        font-size: 1.8rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Mobile Devices (max-width: 768px)
+   - Sidebar bertransformasi menjadi floating bottom navigation
+   - Menu tampil icon + label kecil
+   - Hero title diperkecil & karakter tetap centered
+   - Project slider menampilkan ~85% dari 1 card dengan tombol mudah ditekan
+   - Amplop Contact diperkecil
+   - Floating WhatsApp berada di atas bottom nav
+   - Ruang bawah pada main agar konten tidak tertutup navigation
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+
+    /* Floating Bottom Navigation Bar */
+    header {
+        position: fixed;
+        top: auto;
+        bottom: 14px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 28px);
+        max-width: 420px;
+        height: auto;
+        z-index: 1000;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        border-radius: 28px;
+        padding: 7px 10px;
+        box-shadow:
+            0 10px 28px rgba(162, 191, 183, 0.48),
+            inset 1.5px 1.5px 3px rgba(255, 255, 255, 0.85),
+            inset -1.5px -1.5px 3px rgba(154, 183, 175, 0.3);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(255, 255, 255, 0.55);
+    }
+
+    .sidebar-nav {
+        width: 100%;
+    }
+
+    .nav-list {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 4px;
+        width: 100%;
+    }
+
+    .nav-item {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* Menu Link: Icon + Small Label */
+    .nav-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+        padding: 7px 4px;
+        width: 100%;
+        border-radius: 18px;
+        text-align: center;
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        white-space: nowrap;
+    }
+
+    .nav-link i {
+        font-size: 1.05rem;
+        width: auto;
+        line-height: 1;
+        margin: 0;
+    }
+
+    .nav-link span {
+        font-size: 0.68rem;
+        line-height: 1.1;
+        display: block;
+        font-weight: 700;
+    }
+
+    /* Main Container & Clearances */
+    main {
+        margin-left: 0;
+        padding: 0 0 120px 0;
+        /* Ruang bawah ekstra agar konten tidak tertutup floating bottom nav */
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* Sections Reset */
+    .about-section,
+    .project-section,
+    .contact-section {
+        margin-left: 0;
+        padding: 60px 18px 80px 18px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    footer {
+        margin-left: 0;
+        padding: 16px 20px 120px 20px;
+        text-align: center;
+    }
+
+    /* Home Hero Section */
+    .home-section {
+        min-height: calc(100vh - 60px);
+        height: calc(100vh - 60px);
+    }
+
+    /* Karakter Tetap Centered */
+    .home-layer-character {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        width: 100%;
+        height: 100%;
+    }
+
+    .character-wrapper {
+        height: 68vh;
+        max-height: 520px;
+        min-height: 330px;
+        width: 100%;
+        max-width: 90%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .character-img {
+        object-fit: contain;
+        object-position: bottom center;
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    /* Hero Title Diperkecil */
+    .home-layer-title {
+        bottom: 14%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        max-width: calc(100% - 24px);
+    }
+
+    .hero-name-pill {
+        padding: 11px 24px;
+        border-radius: 40px;
+    }
+
+    .hero-title-text {
+        font-size: clamp(1.15rem, 5vw, 1.7rem);
+    }
+
+    .code-stream-bg {
+        opacity: 0.07;
+    }
+
+    /* About Section on Mobile */
+    .about-heading {
+        font-size: 1.85rem;
+    }
+
+    .about-intro {
+        font-size: 0.94rem;
+    }
+
+    .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 44px);
+        gap: 10px;
+    }
+
+    .tools-row {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    /* Project Section & Slider on Mobile */
+    .project-title-wrapper {
+        margin-bottom: 30px;
+        gap: 16px;
+    }
+
+    .project-title-wrapper::before,
+    .project-title-wrapper::after {
+        max-width: 50px;
+    }
+
+    .project-title {
+        font-size: 1.4rem;
+        letter-spacing: 0.12em;
+    }
+
+    /* Slider Wrapper with Buttons Placed Easily Below */
+    .project-slider-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 16px;
+        justify-items: center;
+        width: 100%;
+    }
+
+    .project-slider {
+        grid-column: 1 / -1;
+        grid-row: 1;
+        width: 100%;
+        gap: 14px;
+        padding: 14px 6px 20px 6px;
+        scroll-padding: 0 7.5%;
+    }
+
+    /* Display ~85% of 1 Project Card */
+    .project-card {
+        flex: 0 0 85%;
+        min-width: 85%;
+        max-width: 85%;
+        scroll-snap-align: center;
+        padding: 18px 16px 20px 16px;
+        border-radius: 22px;
+    }
+
+    .project-number {
+        font-size: 1.35rem;
+    }
+
+    .project-name {
+        font-size: 1.05rem;
+    }
+
+    .project-category {
+        font-size: 0.8rem;
+    }
+
+    .slider-btn.prev-btn {
+        grid-column: 1;
+        grid-row: 2;
+        justify-self: end;
+        margin-right: 10px;
+        width: 44px;
+        height: 44px;
+        font-size: 0.95rem;
+    }
+
+    .slider-btn.next-btn {
+        grid-column: 2;
+        grid-row: 2;
+        justify-self: start;
+        margin-left: 10px;
+        width: 44px;
+        height: 44px;
+        font-size: 0.95rem;
+    }
+
+    /* Modal Responsive on Mobile */
+    .project-modal-backdrop {
+        padding: 16px;
+    }
+
+    .project-modal-dialog {
+        padding: 20px 16px 18px 16px;
+        border-radius: 22px;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .modal-img-wrapper {
+        min-height: 170px;
+        max-height: 230px;
+        margin: 10px 0 14px 0;
+        border-radius: 16px;
+    }
+
+    .modal-img-wrapper .modal-large-icon {
+        font-size: 3.8rem;
+    }
+
+    .modal-title {
+        font-size: 1.15rem;
+    }
+
+    .modal-category {
+        font-size: 0.82rem;
+    }
+
+    .modal-close-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 0.95rem;
+    }
+
+    /* Contact Section & Envelope on Mobile */
+    .contact-title-wrapper {
+        margin-bottom: 34px;
+        gap: 16px;
+    }
+
+    .contact-title-wrapper::before,
+    .contact-title-wrapper::after {
+        max-width: 50px;
+    }
+
+    .contact-title {
+        font-size: 1.4rem;
+        letter-spacing: 0.12em;
+    }
+
+    .envelope-cta-wrapper {
+        padding-top: 45px;
+        padding-bottom: 16px;
+    }
+
+    .envelope-container {
+        width: 100%;
+        max-width: 420px;
+        height: 260px;
+    }
+
+    .envelope-back {
+        height: 240px;
+        border-radius: 24px;
+    }
+
+    .envelope-letter {
+        width: 90%;
+        bottom: 50px;
+        padding: 22px 16px 18px 16px;
+        border-radius: 18px;
+    }
+
+    .letter-title {
+        font-size: 1.25rem;
+        margin-bottom: 8px;
+    }
+
+    .letter-text {
+        font-size: 0.8rem;
+        line-height: 1.45;
+        margin-bottom: 14px;
+        max-width: 100%;
+    }
+
+    .envelope-btn {
+        padding: 8px 20px;
+        font-size: 0.82rem;
+    }
+
+    .envelope-pocket-wrapper {
+        height: 125px;
+        border-radius: 0 0 24px 24px;
+    }
+
+    .envelope-container:hover .envelope-letter,
+    .envelope-container.is-open .envelope-letter,
+    .envelope-container:focus-within .envelope-letter {
+        transform: translateX(-50%) translateY(-70px);
+    }
+
+    /* Floating WhatsApp Button on Mobile:
+       Cleanly positioned above the floating bottom navigation bar
+    */
+    .floating-wa-btn {
+        bottom: 84px;
+        right: 18px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.65rem;
+        z-index: 999;
+        box-shadow:
+            0 10px 22px rgba(32, 184, 90, 0.4),
+            inset 0 2px 3px rgba(255, 255, 255, 0.8),
+            inset 0 -2px 3px rgba(18, 120, 56, 0.25);
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Small Screen Polish (max-width: 480px)
+   - Extra fine-tuning for narrow mobile viewports (e.g., iPhone SE)
+   - Eliminates horizontal overflow and preserves tap targets
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+    .character-wrapper {
+        height: 62vh;
+        min-height: 300px;
+    }
+
+    .home-layer-title {
+        bottom: 12%;
+    }
+
+    .hero-name-pill {
+        padding: 9px 18px;
+    }
+
+    .hero-title-text {
+        font-size: clamp(1rem, 4.8vw, 1.35rem);
+    }
+
+    .about-heading {
+        font-size: 1.6rem;
+    }
+
+    .about-intro {
+        font-size: 0.9rem;
+    }
+
+    .nav-link {
+        padding: 6px 2px;
+    }
+
+    .nav-link span {
+        font-size: 0.62rem;
+    }
+
+    .nav-link i {
+        font-size: 0.95rem;
+    }
+
+    .envelope-container {
+        max-width: 330px;
+        height: 245px;
+    }
+
+    .envelope-back {
+        height: 225px;
+    }
+
+    .envelope-letter {
+        padding: 18px 12px 14px 12px;
+        bottom: 45px;
+    }
+
+    .letter-title {
+        font-size: 1.12rem;
+        margin-bottom: 6px;
+    }
+
+    .letter-text {
+        font-size: 0.75rem;
+        line-height: 1.4;
+        margin-bottom: 12px;
+    }
+
+    .envelope-btn {
+        padding: 7px 16px;
+        font-size: 0.78rem;
+    }
+
+    .envelope-pocket-wrapper {
+        height: 115px;
+    }
+
+    .envelope-container:hover .envelope-letter,
+    .envelope-container.is-open .envelope-letter,
+    .envelope-container:focus-within .envelope-letter {
+        transform: translateX(-50%) translateY(-58px);
+    }
+
+    .floating-wa-btn {
+        bottom: 80px;
+        right: 14px;
+        width: 46px;
+        height: 46px;
+        font-size: 1.5rem;
+    }
+}
